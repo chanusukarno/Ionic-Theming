@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter" ng-controller="mainCtrl">
+
+  <ion-pane>
+    <ion-header-bar ng-class="'bar-' + appTheme">
+      <h1 class="title">myNetwork</h1>
+    </ion-header-bar>
+    <ion-header-bar class="bar-subheader" ng-class="'bar-' + appTheme">
+      <h1 class="title">Subheader</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+      <ion-list>
+        <button class="button" ng-class="'button-' + appTheme">button</button>
+        <button class="button button-block button-outline" ng-class="'button-' + appTheme">
+          Outlined Button
+        </button>
+        <button class="button button-block" ng-class="'button-' + appTheme">Block Button</button>
+        <button class="button button-block button-clear" ng-class="'button-' + appTheme">Clear Button</button>
+        <ion-item href="#" ng-class="'item-' + appTheme">Item</ion-item>
+        <ion-toggle toggle-class="toggle-{{appTheme}}">Toggle</ion-toggle>
+        <div class="item range" ng-class="'range-' + appTheme">
+          <i class="icon ion-ios7-sunny-outline"></i>
+          <input type="range" name="volume" min="0" max="100" value="33">
+          <i class="icon ion-ios7-sunny"></i>
+        </div>
+        <a class="item" href="#">
+          Badges
+          <span class="badge" ng-class="'badge-' + appTheme">0</span>
+        </a>
+        <br />
+        <br />
+
+        <!-- Choose theme -->
+        <div class="item item-divider">
+          Choose a theme
+        </div>
+        <div class="list">
+          <label class="item item-radio" ng-repeat="theme in themes">
+            <input type="radio" name="group" ng-value="theme" ng-model="appTheme" ng-change="themeChange(theme)">
+            <div class="item" ng-class="'item-' + theme">
+              {{theme}}
+            </div>
+            <i class="radio-icon ion-checkmark"></i>
+          </label>
+        </div>
+
+      </ion-list>
+    </ion-content>
+    <ion-footer-bar ng-class="'bar-' + appTheme">
+      <h1 class="title">Footer</h1>
+    </ion-footer-bar>
+  </ion-pane>
+  </body>
+</html>
